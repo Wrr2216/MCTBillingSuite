@@ -1,0 +1,72 @@
+extends ../layout
+
+block content
+    .main-content
+        .container
+            h1 Projects Overview
+            a.btn.btn-primary.mb-4(href='/projects/create') Create New Project
+            each project in projects
+                .row.project-row
+                    .col-md-9
+                        .row
+                            .col-md-4
+                                p
+                                    span Name: 
+                                    | #{project.name}
+                            .col-md-4
+                                p
+                                    span Client: 
+                                    | #{project.client}
+                            .col-md-4
+                                p
+                                    span Status: 
+                                    | #{project.status}
+                        .row
+                            .col-md-4
+                                p
+                                    span Start Date: 
+                                    | #{project.startDate}
+                            .col-md-4
+                                p
+                                    span Projected End Date: 
+                                    | #{project.projectedEndDate}
+                            .col-md-4
+                                p
+                                    span End Date: 
+                                    | #{project.endDate}
+                        .row
+                            .col-md-4
+                                p
+                                    span Estimated Cost: 
+                                    | #{project.estimatedCost}
+                            .col-md-4
+                                p
+                                    span Actual Cost: 
+                                    | #{project.actualCost}
+                            .col-md-4
+                                p
+                                    span Estimated Revenue: 
+                                    | #{project.estimatedRevenue}
+                        .row
+                            .col-md-4
+                                p
+                                    span Actual Revenue: 
+                                    | #{project.actualRevenue}
+                            .col-md-4
+                                p
+                                    span Hours Worked: 
+                                    | #{project.hoursWorked}
+                            .col-md-4
+                                p
+                                    span Hourly Rate: 
+                                    | #{project.hourlyRate}
+                        .row
+                            .col-md-4
+                                p
+                                    span Project Rate: 
+                                    | #{project.projectRate}
+                    .col-md-3
+                        .btn-group-vertical
+                            a.btn.btn-primary.mb-2(href=`/projects/${project.id}/details`) View Project
+                            a.btn.btn-secondary.mb-2(href=`/projects/${project.id}/edit`) Edit Project
+                            a.btn.btn-danger(href=`/projects/${project.id}/delete`) Delete Project

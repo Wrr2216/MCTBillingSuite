@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+    .main-content
+        .container
+            h1 Create New Project
+            form(method='post', action='/projects/create')
+                .form-group
+                    label(for='name') Project Name
+                    input.form-control(type='text', name='name', required=true)
+                .form-group
+                    label(for='description') Description
+                    textarea.form-control(name='description', required=true)
+                .form-group
+                    label(for='client') Client
+                    input.form-control(type='text', name='client', required=true)
+                .form-group 
+                    label(for='clientEmail') Client Email
+                    input.form-control(type='email', name='clientEmail', required=true)
+                .form-group 
+                    label(for='clientPhone') Client Phone
+                    input.form-control(type='tel', name='clientPhone', required=true)
+                .form-group
+                    label(for='startDate') Start Date
+                    input.form-control(type='date', name='startDate', required=true)
+                .form-group
+                    label(for='projectedEndDate') Projected End Date
+                    input.form-control(type='date', name='projectedEndDate', required=true)
+                .form-group
+                    label(for='endDate') End Date
+                    input.form-control(type='date', name='endDate')
+                .form-group
+                    label(for='status') Status
+                    select.form-control(name='status')
+                        option(value='pending') Pending
+                        option(value='ongoing') Ongoing
+                        option(value='completed') Completed
+                .form-group
+                    label(for='estimatedCost') Estimated Cost
+                    input.form-control(type='number', step='0.01', name='estimatedCost', required=true)
+                .form-group
+                    label(for='actualCost') Actual Cost
+                    input.form-control(type='number', step='0.01', name='actualCost')
+                .form-group
+                    label(for='estimatedRevenue') Estimated Revenue
+                    input.form-control(type='number', step='0.01', name='estimatedRevenue', required=true)
+                .form-group
+                    label(for='actualRevenue') Actual Revenue
+                    input.form-control(type='number', step='0.01', name='actualRevenue')
+                .form-group
+                    label(for='hoursWorked') Hours Worked
+                    input.form-control(type='number', step='0.01', name='hoursWorked', required=true)
+                .form-group
+                    label(for='hourlyRate') Hourly Rate
+                    input.form-control(type='number', step='0.01', name='hourlyRate', required=true)
+                .form-group
+                    label(for='projectRate') Project Rate
+                    input.form-control(type='number', step='0.01', name='projectRate', required=true)
+                button.btn.btn-primary(type='submit') Create Project
